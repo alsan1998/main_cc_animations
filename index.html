@@ -28,9 +28,13 @@ html {
 }
 </style>
 <script>
+var did_scroll = false;
 document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('scroll', () => {
-      if (document.scrollingElement.scrollTop > 1950) document.scrollingElement.scrollTo(0, 5000);
+      if (document.scrollingElement.scrollTop > 1950 && !did_scroll) {
+	      document.scrollingElement.scrollTo(0, 5000);
+	      did_scroll = true;
+      }
   });
 });
 </script>
